@@ -94,6 +94,7 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach((element) =>
         const isPlaying = !audioElement.paused;
         makeAllPlays();
         songIndex = parseInt(e.target.id);
+        // console.log(songIndex);
         path = "/" + "songs/" + (songIndex + 1) + ".mp3";
         masterSongName.innerText = songs[songIndex].songName;
         masterPlay.classList.remove("fa-circle-play");
@@ -101,8 +102,11 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach((element) =>
         e.target.classList.remove("fa-circle-play");
         e.target.classList.add("fa-circle-pause");
 
-        console.log(currentSongPath);
-        console.log(path);
+        // console.log(currentSongPath);
+        // console.log(path);
+
+        currentSongPath = currentSongPath.slice(21);
+        // console.log(currentSongPath);
 
         if (currentSongPath == path) {
             if (!isPlaying) {
