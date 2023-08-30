@@ -136,7 +136,7 @@ document.getElementById("next").addEventListener("click",()=>{
     else{
         songIndex += 1;
     }
-    path = "songs/"+(songIndex+1) + ".mp3";
+    path = "/" + "songs/"+(songIndex+1) + ".mp3";
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.src = path; // first set the new song
     audioElement.currentTime = 0;
@@ -154,7 +154,7 @@ document.getElementById("previous").addEventListener("click",()=>{
     else{
         songIndex -= 1;
     }
-    path = "songs/"+(songIndex+1) + ".mp3";
+    path =  "/" + "songs/"+(songIndex+1) + ".mp3";
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.src = path; // first set the new song
     audioElement.currentTime = 0;
