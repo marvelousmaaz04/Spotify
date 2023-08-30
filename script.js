@@ -105,10 +105,27 @@ Array.from(document.getElementsByClassName("songItemPlay")).forEach((element) =>
         // console.log(currentSongPath);
         // console.log(path);
 
-        currentSongPath = currentSongPath.slice(21);
+        // currentSongPath = currentSongPath.slice(21);
         // console.log(currentSongPath);
+        var url = new URL(currentSongPath);
 
-        if (currentSongPath == path) {
+// Get the protocol, hostname, and port
+var protocol = url.protocol; // "http:"
+var hostname = url.hostname; // "127.0.0.1"
+var port = url.port;         // "5501"
+
+// Construct the base URL
+var baseUrl = protocol + "//" + hostname + (port ? ":" + port : "");
+
+// console.log(baseUrl);
+currentSongPath = currentSongPath.slice(21);
+basePath = baseUrl + currentSongPath;
+actualPath = baseUrl + path; 
+
+// console.log(basePath);
+// console.log(actualPath);
+
+        if (basePath == actualPath) {
             if (!isPlaying) {
                 audioElement.play();
                 e.target.classList.remove("fa-circle-play");
