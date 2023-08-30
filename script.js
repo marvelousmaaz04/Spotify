@@ -122,8 +122,8 @@ currentSongPath = currentSongPath.slice(21);
 basePath = baseUrl + currentSongPath;
 actualPath = baseUrl + path; 
 
-// console.log(basePath);
-// console.log(actualPath);
+console.log(basePath);
+console.log(actualPath);
 
         if (basePath == actualPath) {
             if (!isPlaying) {
